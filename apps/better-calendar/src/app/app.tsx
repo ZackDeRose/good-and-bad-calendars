@@ -1,13 +1,13 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { useEffect, useState } from 'react';
 import {
-  Calendar,
+  BetterCalendar,
   ClientData,
   data,
   Month,
   months,
   validateMonth,
 } from '@calendar-app/calendars';
+import { useEffect, useState } from 'react';
 
 export function App() {
   const [selectedMonth, setSelectedMonth] = useState<Month>('January');
@@ -27,7 +27,7 @@ export function App() {
           setSelectedUser(user);
         }}
       />
-      <Calendar selectedUserId={selectedUser.id} month={selectedMonth} />
+      <BetterCalendar selectedUserId={selectedUser.id} month={selectedMonth} />
 
       {/* {selectedMonth};<pre>{JSON.stringify(data, null, 2)}</pre> */}
       {/* <pre>{JSON.stringify(selectedUser, null, 2)}</pre> */}

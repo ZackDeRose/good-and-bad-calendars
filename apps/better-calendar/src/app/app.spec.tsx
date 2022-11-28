@@ -12,6 +12,6 @@ describe('App', () => {
   it('should have a greeting as the title', () => {
     const { getByText } = render(<App />);
 
-    expect(getByText(/Welcome calendar/gi)).toBeTruthy();
+    expect(getByText(/Welcome better-calendar/gi)).toBeTruthy();
   });
 });
