@@ -51,12 +51,14 @@ export function BetterCalendar({ month, selectedUserId }: BetterCalendarProps) {
   }, [month]);
 
   function getEventsForDay(day: string): ClientData['users'][number]['events'] {
+    console.log(i++);
     return indexedDataByUserIdAndDate[`${selectedUserId} | ${day}`] || [];
   }
 
   function findEventById(
     id: string
   ): ClientData['users'][number]['events'][number] {
+    console.log(i++);
     const event = indexedEventsById[id];
     if (!event) {
       throw new Error(`unable to find event with id: ${id}`);
@@ -78,7 +80,7 @@ export function BetterCalendar({ month, selectedUserId }: BetterCalendarProps) {
             return (
               <div
                 className={`
-                h-64
+                h-24
                 w-24
                 ${week[dayOfTheWeek] == undefined ? 'bg-gray-300' : ''}
                 border-2

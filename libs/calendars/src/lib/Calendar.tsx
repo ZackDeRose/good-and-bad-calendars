@@ -9,11 +9,11 @@ import {
 import { ClientData } from './interfaces';
 import { data } from './sample-data';
 
+let i = 0;
 export interface CalendarProps {
   month: Month;
   selectedUserId: string;
 }
-let i = 0;
 
 export function Calendar({ month, selectedUserId }: CalendarProps) {
   const [monthDates, setMonthDates] = useState<
@@ -42,6 +42,7 @@ export function Calendar({ month, selectedUserId }: CalendarProps) {
   ): ClientData['users'][number]['events'][number] {
     for (const user of data.users) {
       for (const event of user.events) {
+        console.log(i++);
         if (event.id === id) {
           return event;
         }
@@ -64,7 +65,7 @@ export function Calendar({ month, selectedUserId }: CalendarProps) {
             return (
               <div
                 className={`
-                h-64
+                h-24
                 w-24
                 ${week[dayOfTheWeek] == undefined ? 'bg-gray-300' : ''}
                 border-2

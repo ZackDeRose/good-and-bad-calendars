@@ -15,6 +15,7 @@ export function App() {
 
   return (
     <>
+      <h1 className="text-6xl text-center">w/o Hash Maps</h1>
       <MonthDropdown
         startingValue={selectedMonth}
         onChange={(x) => {
